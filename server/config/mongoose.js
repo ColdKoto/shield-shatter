@@ -7,14 +7,16 @@ const mongoose    = require('mongoose'),
       regex       = new RegExp('.js$', 'i'),
       dbURI       = 'mongodb://localhost/shield_shatter';
 
+mongoose.Promise = require('bluebird');
+
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function(){
-    console.log(`Mongoose connected at: ${dbURI}`);
+    console.log('Mongoose connected at:' + dbURI);
 });
 
 mongoose.connection.on('error', function(error){
-    console.error(`Mongoose error: ${err}`);
+    console.error('Mongoose error:' + error);
 });
 
 mongoose.connection.on( 'disconnected', function(){

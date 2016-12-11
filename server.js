@@ -14,5 +14,5 @@ app.use(bp.json());
 require('./server/config/mongoose.js');
 
 app.listen(port, function(){
-    console.log(`server running on port ${port}`);
+    console.log('server running on port ' + port);
 });
