@@ -10,7 +10,7 @@ const mongoose    = require('mongoose'),
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function(){
-    console.log(`Mongoose default connection set at: ${dbURI}`);
+    console.log(`Mongoose connected at: ${dbURI}`);
 });
 
 mongoose.connection.on('error', function(error){
@@ -18,12 +18,12 @@ mongoose.connection.on('error', function(error){
 });
 
 mongoose.connection.on( 'disconnected', function(){
-    console.log('Mongoose has disconnected UNEXPECTEDLY');
+    console.log('Mongoose has disconnected EXPECTEDLY');
 });
 
 process.on('SIGINT', function(){
     mongoose.connection.close(function() {
-        console.log('Mongoose has disconnected EXPECTEDLY');
+        console.log('Mongoose is now closed');
         process.exit( 0 );
     });
 });
