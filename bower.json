@@ -1,0 +1,21 @@
+{
+  "name": "shield_shatter",
+  "description": "Game to solidify MEAN stack.",
+  "main": "index.js",
+  "authors": [
+    "koto"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/ColdKoto/shield-shatter",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-route": "^1.6.0"
+  }
+}
