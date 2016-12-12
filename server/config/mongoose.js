@@ -30,8 +30,8 @@ process.on('SIGINT', function(){
     });
 });
 
-// fs.readdirSync(models_path).forEach(function(file){
-//     if(regex.test(file)){
-//         require(path.join(models_path, file));
-//     }
-// });
+fs.readdirSync(models_path).forEach(function(file){
+    if(regex.test(file)){
+        require(models_path + '/' + file);
+    }
+});
