@@ -1,0 +1,24 @@
+<style type="text/css">
+	label {
+		display: block;
+		padding: 5px;
+	}
+</style>
+<form ng-submit="lC.register()">
+	<fieldset>
+		<legend>Registration</legend>
+		<label>Username: <input type="text" ng-model="lC.newUser.username"> <span ng-bind="lC.registerErrors.username"></span></label>
+		<label>Password: <input type="password"  ng-model="lC.newUser.password"> <span ng-bind="lC.registerErrors.password"></span></label>
+		<label>Password Confirm: <input type="password" ng-model="lC.newUser.passwordconfirm"></label>
+		<button type="submit">Register</button>
+	</fieldset>
+</form>
+<form ng-submit="lC.login()">
+	<fieldset>
+		<legend>Login</legend>
+		<p ng-repeat="error in lC.loginErrors">{{error}}</p>
+		<label>Username: <input type="text" ng-model="lC.loginAttempt.username"></label>
+		<label>Password: <input type="password" ng-model="lC.loginAttempt.password"></label>
+		<button type="submit">Login</button>
+	</fieldset>
+</form>
