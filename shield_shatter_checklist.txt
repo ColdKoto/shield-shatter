@@ -1,0 +1,60 @@
+Owners (players)
+- Name
+- Track(s)
+- Car(s)
+- Driver(s)
+- Money
+
+Drivers
+- Name
+- Car
+- Owner
+- Driving Ability
+- Sanity
+
+Car
+- Name // check
+- Body (health) // check
+- Engine (speed) // check
+- Tires (different tires do better/worse on different tracks) //check
+- Weapons
+- Owner
+- Driver
+- Cost
+--- repair
+--- fuel
+--- upgrade
+
+Track
+- Name
+- Owner
+- Track Material
+- Length
+- Wildcard
+- Weather
+- Cost
+
+Race
+- Track
+- Laps
+- Drivers
+- Gambling
+
+Times of Day
+- morning
+--- prep for day
+- afternoon
+--- race / gamble
+- night
+--- trade
+
+Pit Crew
+-------------
+- pay for supplies for race during prep (fuel recharges, health packs, weapons)
+- costs some amount of laps
+- penalty
+- driver changes
+
+Players get to create an owner they will become, one driver and one track they will own.
+
+Every time cars encounter (are in the same position as each other) you can choose to sabotage a player.

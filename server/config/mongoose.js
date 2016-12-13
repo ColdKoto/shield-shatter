@@ -1,37 +1,14 @@
-console.log('linked to mongoose!');
-
 const mongoose    = require('mongoose'),
-      fs          = require('fs'),
-      path        = require('path'),
       models_path = path.join(__dirname, '../models'),
-      regex       = new RegExp('.js$', 'i'),
-      dbURI       = 'mongodb://localhost/shield_shatter';
+      fs          = require('fs'),
+      path        = require('path');
 
 mongoose.Promise = require('bluebird');
 
-mongoose.connect(dbURI);
-
-mongoose.connection.on('connected', function(){
-    console.log('Mongoose connected at:' + dbURI);
-});
-
-mongoose.connection.on('error', function(error){
-    console.error('Mongoose error:' + error);
-});
-
-mongoose.connection.on( 'disconnected', function(){
-    console.log('Mongoose has disconnected EXPECTEDLY');
-});
-
-process.on('SIGINT', function(){
-    mongoose.connection.close(function() {
-        console.log('Mongoose is now closed');
-        process.exit( 0 );
-    });
-});
+mongoose.connect('mongodb://localhost/mini_store_db');
 
 fs.readdirSync(models_path).forEach(function(file){
-    if(regex.test(file)){
-        require(models_path + '/' + file);
-    }
+	if(file.indexOf('.js') > 0){
+		require(models_path + '/' + file);
+	}
 });
