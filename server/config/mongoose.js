@@ -1,7 +1,6 @@
 const mongoose    = require('mongoose'),
-      path        = require('path'),
-      models_path = path.join(__dirname, '../models'),
-      fs          = require('fs');
+      fs          = require('fs'),
+      models_path = __dirname + '/../models';
 
 mongoose.Promise = require('bluebird');
 
