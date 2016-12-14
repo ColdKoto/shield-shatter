@@ -1,10 +1,9 @@
 const express  = require('express'),
       bp       = require('body-parser'),
-      path     = require('path'),
       app      = express();
 
-app.use(express.static(path.join(__dirname, 'client')));
-app.use(express.static(path.join(__dirname, 'bower_components')));
+app.use(express.static(__dirname + '/client'));
+app.use(express.static(__dirname + '/bower_components'));
 
 app.use(bp.urlencoded({ extended: true }));
 app.use(bp.json());
